@@ -13,6 +13,8 @@ for l in lines:
         nombres.append(0)
 nombres.append(0)
 
+print(nombres)
+
 maxim_1 = 0
 maxim_2 = 0
 maxim_3 = 0
