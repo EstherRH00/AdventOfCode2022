@@ -1,4 +1,4 @@
-entrada = open("input_9")
+entrada = open("input_91")
 lines = entrada.readlines()
 entrada.close()
 
@@ -30,34 +30,36 @@ def move_tail(head, tail):
 
 
 tail_pos = set()
-"""
+
+
 head = [0,0]
 tail = [0,0]
 for l in lines:
     m, n = l.split()
     n = int(n)
-    print(m, n)
+    #print(m, n)
     for i in range(n):
         move(m, head)
-        print(head)
+        #print(head)
         move_tail(head, tail)
-        print(tail)
+        #print(tail)
         tail_pos.add(tuple(tail))
 
-print(len(tail_pos))
-"""
+print("Primer",len(tail_pos))
+
+tail_pos = set()
 knots = [[0,0] for i in range(10)]
 for l in lines:
     m, n = l.split()
     n = int(n)
-    print(m, n)
+    #print(m, n)
     for i in range(n):
         move(m, knots[0])
-        print("H",knots[0])
+        #print("H",knots[0])
         for j in range(1,10):
             move_tail(knots[j-1], knots[j])
-            if knots[j] != [0,0]:
-                print(j, knots[j])
+            #if knots[j] != [0,0]:
+                #print(j, knots[j])
         tail_pos.add(tuple(knots[9]))
 
-print(len(tail_pos))
+print("Segon",len(tail_pos))
